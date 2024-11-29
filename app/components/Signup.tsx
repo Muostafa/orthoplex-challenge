@@ -31,7 +31,7 @@ const Signup = () => {
     return true;
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
 
     if (!validateForm()) {
@@ -57,7 +57,7 @@ const Signup = () => {
       }
 
       login(username, data.token);
-    } catch (err) {
+    } catch (err: any) {
       setError(err.message);
     } finally {
       setLoading(false);
@@ -94,7 +94,6 @@ const Signup = () => {
             placeholder="Confirm Password"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
-            required
             className={styles.input}
           />
         </div>

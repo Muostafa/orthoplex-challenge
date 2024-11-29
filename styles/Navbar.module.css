@@ -16,6 +16,7 @@
   list-style: none;
   display: flex;
   gap: 20px;
+  height: 100%;
 }
 
 .navItem {
@@ -42,6 +43,7 @@ button.navItem {
   font-size: 28px;
   font-weight: bolder;
   border-radius: 10%;
+  height: 100%;
 }
 
 button.navItem:hover {
@@ -62,7 +64,7 @@ button.navItem:hover {
     width: 100%;
     flex-direction: row;
     justify-content: space-around;
-    gap: 10px;
+    gap: 5px;
     padding: 0;
   }
   button.navItem {

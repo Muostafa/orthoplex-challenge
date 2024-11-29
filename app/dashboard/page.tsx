@@ -25,12 +25,7 @@ export default function Dashboard() {
   return (
     <div className={styles.container}>
       <h1 className={styles.welcomeMessage}>Welcome, {user.username}!</h1>
-      <PhotoWall
-        posts={posts}
-        setPosts={setPosts}
-        postsBatchNum={postsBatchNum}
-        setPostsBatchNum={setPostsBatchNum}
-      />
+      <PhotoWall posts={posts} setPosts={setPosts} />
     </div>
   );
 }

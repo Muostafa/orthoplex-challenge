@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useEffect } from "react";
 import { useAuth } from "../../context/AuthContext";
 import { useRouter } from "next/navigation";
@@ -29,7 +28,7 @@ const Login = () => {
     return true;
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
 
     if (!validateForm()) {
@@ -55,7 +54,7 @@ const Login = () => {
       }
 
       login(username, data.token);
-    } catch (err) {
+    } catch (err: any) {
       if (err instanceof SyntaxError) {
         setError("Unable to connect to Server");
       } else {

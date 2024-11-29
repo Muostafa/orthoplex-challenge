@@ -9,7 +9,7 @@ function PhotoWall({ posts, setPosts }: { posts: any; setPosts: any }) {
   //all the current posts with the required info
   const [postsList, setPostsList] = useState([]);
   //determines if the loading should appear on the button
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   //fetch 7 photos from the picsum api and add them to posts
   const getFetchPhotos = () => {
