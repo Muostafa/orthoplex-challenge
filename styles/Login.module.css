@@ -1,0 +1,41 @@
+.container {
+  max-width: 400px;
+  margin: 100px auto;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.container > h1 {
+  margin-bottom: 1rem;
+}
+.input {
+  padding: 1rem;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #fb609b;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #de5589;
+}
+
+.button:disabled {
+  background-color: #aaa;
+}
+
+.error {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.signupLink {
+  margin-top: 1rem;
+}

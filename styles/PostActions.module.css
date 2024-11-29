@@ -1,0 +1,21 @@
+.likes {
+    color: gray;
+    font-weight: 700;
+    padding-left: 10px;
+}
+
+.postActions {
+    display: inline-flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0%;
+}
+
+.actions > *{
+    margin: 0 7px;
+}
+
+.actions > *:hover{
+    cursor: pointer;
+}

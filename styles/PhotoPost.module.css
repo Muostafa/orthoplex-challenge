@@ -1,0 +1,46 @@
+.photoPost {
+  margin: 10px 0;
+  /* padding-bottom: 10px; */
+  width: 300px;
+  background-color: #f7f7fa;
+  border: 2px solid black;
+}
+
+.postContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.postImage {
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease;
+}
+
+.postImage:hover {
+  transform: scale(1.5);
+  cursor: pointer;
+  z-index: 1;
+}
+
+.postContent > p {
+  padding: 5px 10px;
+  margin: 0px;
+}
+
+@media screen and (max-width: 800px) {
+  .photoPost {
+    margin: 0;
+    width: 100%;
+    border-radius: 0px;
+    border: 0px solid black;
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+  }
+  .postImage:hover {
+    transform: none;
+    cursor: default;
+    z-index: 0;
+  }
+}
