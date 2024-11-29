@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import PhotoPost from "./PhotoPost";
 import styles from "../../styles/PhotoWall.module.css";
+import Loader from "./Loader";
 
 let postsBatchNum = 4;
 function PhotoWall({ posts, setPosts }: { posts: any; setPosts: any }) {
@@ -62,13 +63,17 @@ function PhotoWall({ posts, setPosts }: { posts: any; setPosts: any }) {
   return (
     <div className={styles.container}>
       <div className={styles.photoWall}>{postsList}</div>
-      <button
-        className={styles.button}
-        onClick={getFetchPhotos}
-        disabled={isLoading}
-      >
-        {isLoading ? "Loading..." : "Load more posts"}
-      </button>
+      {!isLoading ? (
+        <button
+          className={styles.button}
+          onClick={getFetchPhotos}
+          disabled={isLoading}
+        >
+          {isLoading ? "Loading..." : "Load more photos"}
+        </button>
+      ) : (
+        <Loader />
+      )}
     </div>
   );
 }

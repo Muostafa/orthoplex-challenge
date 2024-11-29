@@ -56,7 +56,12 @@ const Login = () => {
 
       login(username, data.token);
     } catch (err) {
-      setError(err.message);
+      if (err instanceof SyntaxError) {
+        setError("Unable to connect to Server");
+      } else {
+        setError(err.message);
+      }
+      console.log(err);
     } finally {
       setLoading(false);
     }

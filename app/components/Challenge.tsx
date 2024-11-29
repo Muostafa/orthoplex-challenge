@@ -1,6 +1,7 @@
 "use client";
 import styles from "../../styles/Challenge.module.css";
 import { useRouter } from "next/navigation";
+import Loader from "./Loader";
 
 const Challenge = () => {
   const router = useRouter();
@@ -111,7 +112,10 @@ const Challenge = () => {
         </p>
       </div>
       <div className={styles.challengeSection}>
-        <h2 className={styles.heading}>6. Loader</h2>
+        <div className={styles.loader}>
+          <h2 className={styles.heading}>6. Loader</h2>
+          <Loader />
+        </div>
         <p className={styles.text}>
           A <strong>Loader</strong> component was created to show a spinner or
           loading text while fetching API data. It ensures a smooth user

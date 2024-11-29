@@ -10,6 +10,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <div className="main">
+          <div className="gradient" />
+        </div>
         <AuthProvider>
           <Navbar />
           {children}
