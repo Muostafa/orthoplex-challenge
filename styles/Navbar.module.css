@@ -50,6 +50,11 @@ button.navItem:hover {
   background-color: #de5589;
 }
 
+.icon {
+  display: flex;
+  gap: 10px;
+}
+
 /* Mobile Styles */
 @media (max-width: 600px) {
   .navbar {
@@ -64,12 +69,16 @@ button.navItem:hover {
     width: 100%;
     flex-direction: row;
     justify-content: space-around;
-    gap: 5px;
+    gap: 0px;
     padding: 0;
   }
   button.navItem {
-    font-size: 15px;
     font-weight: bolder;
     border-radius: 10%;
+  }
+
+  .desktop {
+    display: none;
+    position: absolute;
   }
 }

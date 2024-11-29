@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <div style={{ textAlign: "center", marginTop: "70px" }}>
       {user && (
-        <p>
+        <p style={{ wordBreak: "break-word" }}>
           You are logged in as <strong>{user.username}</strong>
         </p>
       )}

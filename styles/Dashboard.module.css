@@ -4,9 +4,10 @@
   text-align: center;
 }
 
-.welcome {
+.welcomeMessage {
   font-size: 2rem;
   margin-bottom: 20px;
+  word-wrap: break-word;
 }
 
 .logoutButton {

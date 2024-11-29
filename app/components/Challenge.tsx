@@ -27,6 +27,7 @@ const Challenge = () => {
             JSON Web Tokens.
           </li>
         </ul>
+
         <div className={styles.text}>
           Example:
           <pre className={styles.code}>
@@ -35,15 +36,42 @@ const Challenge = () => {
             JWT_SECRET=mySuperSecretKey
           </pre>
         </div>
-      </div>{" "}
+      </div>
+      <div>OR</div>
+      <p
+        className={styles.text}
+        style={{ marginBottom: "1rem", marginTop: "1rem" }}
+      >
+        You can directly explore the live website at:{" "}
+        <a
+          href="https://orthoplex-challenge-t4bh.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.link}
+        >
+          https://orthoplex-challenge-t4bh.vercel.app/
+        </a>
+      </p>
+      <div className={styles.challengeSection}>
+        <h2 className={styles.heading}>Dashboard Extra Feature</h2>
+        <p className={styles.text}>
+          An <strong>infinite wall of random pictures</strong> was implemented
+          on the <strong>Dashboard</strong>. The user can scroll through an
+          endless stream of random images and mark any number of them as
+          favorites. A separate <strong>Favorites</strong> page was added, where
+          users can view all their selected images. This enhances the user
+          experience by adding dynamic and interactive content to the
+          application.
+        </p>
+      </div>
       <h1 className={styles.title}>Challenge Overview</h1>
       <div className={styles.challengeSection}>
         <h2 className={styles.heading}>1. Create a new React project</h2>
         <p className={styles.text}>
           The project was set up using <strong>Next.js</strong> for its powerful
-          routing and server-side rendering capabilities. Modules such as
-          `next/router` and `useState` were used for navigation and state
-          management, respectively.
+          routing, server-side rendering capabilities and easy deployment on
+          vercel. Modules such as `next/router` and `useState` were used for
+          navigation and state management, respectively.
         </p>
       </div>
       <div className={styles.challengeSection}>
