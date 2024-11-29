@@ -20,8 +20,9 @@ function PhotoWall({ posts, setPosts }: { posts: any; setPosts: any }) {
         setPosts((oldPosts: any) => oldPosts.concat(result));
         postsBatchNum++;
       })
-      .then(() => {})
-      .catch(console.log);
+      .catch((error: Error) => {
+        console.error("Error fetching photos:", error);
+      });
   };
 
   useEffect(() => {
@@ -53,7 +54,6 @@ function PhotoWall({ posts, setPosts }: { posts: any; setPosts: any }) {
           postImage={post.download_url}
           width={post.width}
           height={post.height}
-          notes={Math.floor(Math.random() * 100)}
         />
       ))
     );
