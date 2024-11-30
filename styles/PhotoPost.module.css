@@ -2,7 +2,7 @@
   margin: 10px 0;
   /* padding-bottom: 10px; */
   width: 300px;
-  color: #ff3040;
+  color: #de5589;
   background-color: #fff;
   border: 2px solid black;
 }
@@ -46,7 +46,7 @@
 }
 .likeButton:hover {
   cursor: pointer;
-  color: #ff304175;
+  color: #de558a91;
 }
 
 @media screen and (max-width: 800px) {

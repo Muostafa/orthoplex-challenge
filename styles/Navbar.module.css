@@ -56,7 +56,7 @@ button.navItem:hover {
 }
 
 /* Mobile Styles */
-@media (max-width: 600px) {
+@media (max-width: 780px) {
   .navbar {
     flex-direction: row;
     justify-content: space-around;

@@ -1,36 +1,24 @@
 "use client";
-import { useState, useEffect } from "react";
+
+import { useEffect, useState } from "react";
 import { useAuth } from "../../context/AuthContext";
 import Link from "next/link";
 import styles from "../../styles/Dashboard.module.css";
 import FavoritesWall from "../components/FavoritesWall";
+import { useFavorites } from "../../context/FavoritesContext";
+import { useRouter } from "next/navigation";
 
 export default function Dashboard() {
-  const { user, token } = useAuth();
+  const router = useRouter();
+  const { user } = useAuth();
+  const { favorites, loading } = useFavorites();
   const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(true); // To show a loading spinner until the data is fetched
 
   useEffect(() => {
-    const fetchData = async () => {
-      if (user) {
+    const fetchPhotoDetails = async () => {
+      if (favorites.length > 0) {
         try {
-          // Fetch user's favorite photo IDs
-          const response = await fetch("/api/user/favoritePhotos", {
-            method: "GET",
-            headers: {
-              Authorization: `Bearer ${token}`, // Use the token you have stored in context
-            },
-          });
-
-          if (!response.ok) {
-            throw new Error("Failed to fetch favorite photos");
-          }
-
-          const data = await response.json();
-          const favoriteIds = data.favoritePhotos;
-
-          // Fetch information for each favorite photo
-          const fetchPhotos = favoriteIds.map(async (id: number) => {
+          const fetchPhotos = favorites.map(async (id: number) => {
             const photoResponse = await fetch(
               `https://picsum.photos/id/${id}/info`
             );
@@ -40,20 +28,18 @@ export default function Dashboard() {
             return await photoResponse.json();
           });
 
-          // Wait for all photo data to be fetched
           const photoData: any = await Promise.all(fetchPhotos);
-
-          setPosts(photoData); // Set the fetched posts in state
+          setPosts(photoData);
         } catch (err) {
-          console.error("Error fetching favorite photos:", err);
-        } finally {
-          setLoading(false); // Stop loading after fetching all data or error
+          console.error("Error fetching photo details:", err);
         }
+      } else {
+        setPosts([]);
       }
     };
 
-    fetchData();
-  }, [user]);
+    fetchPhotoDetails();
+  }, [favorites]);
 
   if (!user) {
     return (
@@ -73,6 +59,25 @@ export default function Dashboard() {
       </div>
     );
   }
+
+  if (favorites.length === 0)
+    return (
+      <div className={styles.container}>
+        <h1 className={styles.welcomeMessage}>Welcome, {user.username}!</h1>
+        <h3>
+          Go to{" "}
+          <strong>
+            <span
+              className={styles.link}
+              onClick={() => router.push("/dashboard")}
+            >
+              Dashboard
+            </span>
+          </strong>{" "}
+          and like some photos to view them
+        </h3>
+      </div>
+    );
 
   return (
     <div className={styles.container}>

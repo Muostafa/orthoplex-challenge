@@ -32,7 +32,7 @@ export default async function handler(req, res) {
 
       // Check if the photo is already in favorites
       if (user.favoritePhotos.includes(photoId)) {
-        return res.status(400).json({ message: "Photo already in favorites" });
+        return res.status(200).json({ message: "Photo already in favorites" });
       }
 
       // Add the photo ID to the user's favoritePhotos array

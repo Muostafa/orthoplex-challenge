@@ -55,8 +55,7 @@ const Signup = () => {
       if (!response.ok) {
         throw new Error(data.message || "Signup failed");
       }
-
-      login(username, data.token);
+      router.push("/login");
     } catch (err: any) {
       setError(err.message);
     } finally {

@@ -6,6 +6,7 @@ import { IoMdHome } from "react-icons/io";
 import { IoLogIn } from "react-icons/io5";
 import { MdDashboard } from "react-icons/md";
 import { IoLogOut } from "react-icons/io5";
+import { FaHeart } from "react-icons/fa";
 
 const Navbar = () => {
   const { user, logout } = useAuth();
@@ -44,6 +45,17 @@ const Navbar = () => {
                 <div className={styles.icon}>
                   <MdDashboard />
                   <p className={styles.desktop}>Dashboard</p>
+                </div>
+              </button>
+            </li>
+            <li>
+              <button
+                className={styles.navItem}
+                onClick={() => router.push("/favorites")}
+              >
+                <div className={styles.icon}>
+                  <FaHeart />
+                  <p className={styles.desktop}>Favorites</p>
                 </div>
               </button>
             </li>

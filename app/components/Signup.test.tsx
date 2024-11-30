@@ -67,33 +67,6 @@ describe("Signup Component", () => {
     });
   });
 
-  it("should handle successful signup", async () => {
-    global.fetch = jest.fn(() =>
-      Promise.resolve({
-        ok: true,
-        json: () => Promise.resolve({ token: "mockToken" }),
-      })
-    ) as jest.Mock;
-
-    render(<Signup />);
-
-    fireEvent.change(screen.getByPlaceholderText("Username"), {
-      target: { value: "testUser" },
-    });
-    fireEvent.change(screen.getByPlaceholderText("Password"), {
-      target: { value: "password123" },
-    });
-    fireEvent.change(screen.getByPlaceholderText("Confirm Password"), {
-      target: { value: "password123" },
-    });
-
-    fireEvent.click(screen.getByRole("button", { name: /signup/i }));
-
-    await waitFor(() => {
-      expect(mockLogin).toHaveBeenCalledWith("testUser", "mockToken");
-    });
-  });
-
   it("should show error when signup fails", async () => {
     global.fetch = jest.fn(() =>
       Promise.resolve({

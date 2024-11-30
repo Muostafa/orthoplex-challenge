@@ -44,12 +44,12 @@ const Challenge = () => {
       >
         You can directly explore the live website at:{" "}
         <a
-          href="https://orthoplex-challenge-t4bh.vercel.app/"
+          href="https://mustafa-orthoplex-challenge.vercel.app/"
           target="_blank"
           rel="noopener noreferrer"
           className={styles.link}
         >
-          https://orthoplex-challenge-t4bh.vercel.app/
+          https://mustafa-orthoplex-challenge.vercel.app/
         </a>
       </p>
       <div className={styles.challengeSection}>
