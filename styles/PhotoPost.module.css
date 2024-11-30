@@ -35,7 +35,7 @@
   width: 100%;
   font-size: 30px;
   justify-content: center;
-  align-items: end;
+  align-items: self-end;
 }
 
 .likeButton {
