@@ -5,7 +5,7 @@ import { useAuth } from "./AuthContext";
 const FavoritesContext = createContext();
 
 export const FavoritesProvider = ({ children }) => {
-  const { user, token } = useAuth();
+  const { token } = useAuth();
   const [favorites, setFavorites] = useState([]);
   const [loading, setLoading] = useState(false);
 

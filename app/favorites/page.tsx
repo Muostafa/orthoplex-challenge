@@ -82,7 +82,7 @@ export default function Dashboard() {
   return (
     <div className={styles.container}>
       <h1 className={styles.welcomeMessage}>Welcome, {user.username}!</h1>
-      <FavoritesWall posts={posts} setPosts={setPosts} />
+      <FavoritesWall posts={posts} />
     </div>
   );
 }

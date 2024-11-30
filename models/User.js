@@ -14,12 +14,12 @@ const UserSchema = new mongoose.Schema(
     },
     favoritePhotos: [
       {
-        type: Number, // Store the photo IDs as numbers
+        type: Number,
       },
     ],
   },
   {
-    timestamps: true, // Automatically adds createdAt and updatedAt fields
+    timestamps: true,
   }
 );
 

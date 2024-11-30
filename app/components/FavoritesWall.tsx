@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import PhotoPost from "./PhotoPost";
 import styles from "../../styles/PhotoWall.module.css";
 
-function FavoritesWall({ posts, setPosts }: { posts: any; setPosts: any }) {
+function FavoritesWall({ posts }: { posts: any }) {
   const [postsList, setPostsList] = useState([]);
 
   //update postsLists that should appear on window

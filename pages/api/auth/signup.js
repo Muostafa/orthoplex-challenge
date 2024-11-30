@@ -13,6 +13,11 @@ export default async function handler(req, res) {
       return res.status(400).json({ message: "Username already taken!" });
     }
 
+    if (password.length < 5) {
+      return res
+        .status(400)
+        .json({ message: "Password must be at least 5 characters long." });
+    }
     const hashedPassword = await bcrypt.hash(password, 10);
 
     const newUser = new User({

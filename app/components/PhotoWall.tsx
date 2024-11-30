@@ -50,7 +50,6 @@ function PhotoWall({ posts, setPosts }: { posts: any; setPosts: any }) {
         <PhotoPost
           key={post.id}
           id={post.id}
-          userName={post.author}
           postImage={post.download_url}
           width={post.width}
           height={post.height}

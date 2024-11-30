@@ -19,7 +19,6 @@ function PhotoPost({ id, postImage, width, height }: any) {
   }, [favorites, id]);
 
   const handleLikeToggle = async () => {
-    console.log(id);
     setLoading(true);
     if (liked) {
       await removeFavorite(id); // Remove from favorites

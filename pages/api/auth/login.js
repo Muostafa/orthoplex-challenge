@@ -5,7 +5,6 @@ import User from "../../../models/User";
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
-    console.log("hi");
     const { username, password } = req.body;
 
     await connectToDatabase();
@@ -22,7 +21,7 @@ export default async function handler(req, res) {
     const token = jwt.sign(
       { username: user.username },
       process.env.JWT_SECRET,
-      { expiresIn: "20d" }
+      { expiresIn: "2h" }
     );
 
     res.status(200).json({ message: "Login successful!", token });
