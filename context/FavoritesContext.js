@@ -41,17 +41,14 @@ export const FavoritesProvider = ({ children }) => {
 
   const addFavorite = async (photoId) => {
     try {
-      const response = await fetch(
-        "http://localhost:3000/api/user/addFavorite",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-          body: JSON.stringify({ photoId }),
-        }
-      );
+      const response = await fetch("/api/user/addFavorite", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ photoId }),
+      });
 
       if (!response.ok) {
         throw new Error("Failed to add favorite");
@@ -67,17 +64,14 @@ export const FavoritesProvider = ({ children }) => {
 
   const removeFavorite = async (photoId) => {
     try {
-      const response = await fetch(
-        "http://localhost:3000/api/user/removeFavorite",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-          body: JSON.stringify({ photoId }),
-        }
-      );
+      const response = await fetch("/api/user/removeFavorite", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ photoId }),
+      });
 
       if (!response.ok) {
         throw new Error("Failed to remove favorite");
