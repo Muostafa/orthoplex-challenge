@@ -7,6 +7,7 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const router = useRouter();
   const [user, setUser] = useState(null);
+  const [token, setToken] = useState(null);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -15,6 +16,7 @@ export const AuthProvider = ({ children }) => {
         const payload = JSON.parse(atob(token.split(".")[1]));
         if (payload && payload.exp > Date.now() / 1000) {
           //convert to seconds
+          setToken(token);
           setUser(payload);
         } else {
           localStorage.removeItem("token");
@@ -28,18 +30,20 @@ export const AuthProvider = ({ children }) => {
 
   const login = (username, token) => {
     localStorage.setItem("token", token);
+    setToken(token);
     setUser({ username });
     router.push("/dashboard");
   };
 
   const logout = () => {
     localStorage.removeItem("token");
+    setToken(null);
     setUser(null);
     router.push("/login");
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={{ user, login, logout, token }}>
       {children}
     </AuthContext.Provider>
   );

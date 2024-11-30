@@ -1,0 +1,23 @@
+.container {
+  max-width: 600px;
+  margin: 100px auto;
+  text-align: center;
+}
+
+.welcomeMessage {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  word-wrap: break-word;
+}
+
+.logoutButton {
+  padding: 10px 20px;
+  background-color: #e44c65;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.logoutButton:hover {
+  background-color: #c53e54;
+}
